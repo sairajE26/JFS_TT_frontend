@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd JFS-TT-main && npm run build",
+  "outputDirectory": "JFS-TT-main/build",
+  "framework": "create-react-app",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
