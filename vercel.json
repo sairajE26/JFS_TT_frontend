@@ -1,8 +1,16 @@
 {
-  "buildCommand": "cd JFS-TT-main && npm run build",
-  "outputDirectory": "JFS-TT-main/build",
-  "framework": "create-react-app",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "JFS-TT-main/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "JFS-TT-main/build"
+      }
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/JFS-TT-main/build/index.html" }
+  ]
 }
