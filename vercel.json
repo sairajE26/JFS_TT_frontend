@@ -5,12 +5,17 @@
       "src": "JFS-TT-main/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "JFS-TT-main/build"
+        "distDir": "build"
       }
     }
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/JFS-TT-main/build/index.html" }
-  ]
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "functions": {
+    "JFS-TT-main/src/**/*": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
